@@ -60,57 +60,63 @@
 			<!-- Post -->
 			<div class="post">
 				<!-- Heading -->
-				<a href="#"><h1>Testing</h1></a>
+				<a href="#"><h1>Dependency Analysis</h1></a>
 				<hr>
-				<div class="in-content">
-					<p>
-				<a href="https://kupaliwa.mysite.syr.edu/">Author : Kunal Paliwal</br></br></a>				
+				<div class="in-content">			
+				<p>
+				<a href="https://kupaliwa.mysite.syr.edu/">Author : Kunal Paliwal</br></a>
+				<a href="http://www.ecs.syr.edu/faculty/fawcett/handouts/Webpages/fawcettHome.htm">Source : Jim Fawcett</br></br></a>	
 				<a class="read-more" href="img/depanal.jpg" target="_blank">Package Structure</a>            
-            <pre>
-The first company founded to provide software products and services was Computer Usage Company in 1955. Since then, software has become
-an intrinsic part of business over the last decade. Business in almost all sectors depends on it, to aid in the development, marketing
-and support of its productand services. According to industry analyst Gartner, the size of the worldwide software industry in 2013 was
-US$407.3 billion, an increase of 4.8% over 2012. As in past years, the largest four software vendors were Microsoft, Oracle
-Corporation, IBM, and SAP respectively.This has led to reliability becoming an important factor alongside costs while designing
-software. Most bugs arise from mistakes and errors made in either a program's source code or its design, or in components and operating
-system used by such programs.For example, bugs in code that controls the Therac-25 radiation therapy machine were directly responsible
-for patient deaths in the 1980s. In 1996, the European Space Agency's US$1 billion prototype Ariane 5 rocket had to be destroyed less
-than a minute after launch due to a bug in the on-board guidance computer program.This makes testing an important tool to prevent such
-unexpected outcomes as well as increasing reliability of the software. Many critical issues will be discussed in this document which
-will summarize the key issues and their solutions in the design of the test harness.This system will be implemented in C# using the
-facilities of .Net framework class libraries and Visual Studio 2015. Test harness will be divided into separate modules in which each
-module performs specific tasks.
+				<pre>
+Introduction: 
+Why do we need dependency analysis?
+Answer
 
-The project should provide capability to:
-1) Execute test requests after obtaining them from a XML file.
-2) Handle each test request by isolating it with an app domain.
-3) Create a log file with time stamp for each activity that takes place
-in the test harness.
-4) Support all client queries from the log file.
-5) Fetch DLL files from the specified directory and inject it to the
-   app domain.
-6) Assert module which displays the status of the test harness.
+Design: 
+The Code Analyzer package structure can be found in the above tag with the author. The packages focus on three areas:
+Building a List of Source Code Files:
+1) The Window package is used to identify the root directory for the analysis and to pick file patterns for the language we want to
+ analyze, e.g., *.h, *.cpp, or *.cs. 
+2) FileMgr package constructs a list of fully qualified file names that match specifications provided by the window package. It uses
+ FileSystem package to query the file system to find child directories and files3 using operating system APIs (we have implementations
+  for both Windows and Linux). It does its work by recursively calling its search function with the root and then discovered child 
+  directories.
 
-Important issues to be solved during implementation of this system are:
-1) Unloading exception – solved by making sure unloading happens b4 loading
- a new DLL.
-2) Stub doesn’t work – solved by providing exception
-3) App domain plugging
-4) Third party dependencies – solved by accessing meta data
-Thus Test Harness can handle almost all kinds of tests and such a system
-can be implemented using the available resources provided by the
-.Net framework.
+Parsing each Source Code File:
+1) The Parser package is responsible for analyzing a source file based on rules defined in the ActionsAndRules package. Parser collects 
+its input from the scanner packages Tokenizer and SemiExp. That results in a list of tokens that has just enough information to make a 
+decision about grammatical constructs without having to save left over information for the next round. What that last sentence means is 
+that the token sequence has just enough tokens to search for matches in the rule collection. 
+2) When a rule matches it invokes its actions. It is the actions that build the Abstract Syntax Tree (AST), using help from the Scope 
+Stack. That process continues until all of the files have been analyzed. 
+3) The AbstrSynTree and ScopeStack packages provide all the mechanics for building the AST. The AST serves as a container for all 
+information that results from parsing all the selected files.
+
+Displaying Results:
+1) Each of the displays is build by the Display package from information contained in the AST. This package provides functionality to 
+build:
+2) Metrics Display which shows, for each function, size in line count and complexity as measured by the number of descendent scopes in 
+the function.
+3) Abstract Syntax Tree visualization, an indented list of all the nodes in the AST.
+SLOC list, showing each file and its source line count.
+
+The logger package is used by display to write to the console and to a log file. It has three different kinds of output, using three 
+different specialized loggers:
+Results mode - used to show normal output
+Demonstration mode - used to help users understand how the program works, mostly by looking at rule firings and the resulting actions
+Debug mode - used to look at parsing details to help make the parsing detections and actions correct.
+Analyzser code has statements for each of these three specialized loggers. The user just turns them on and off to see the various types 
+of output. That is done with checkboxes in the GUI Display Mode tab.
 </pre>
-
 					</p>															
-					<a class="read-more" href="assets/doc.PDF" target="_blank">Read more</a>
+					<a class="read-more" href="http://www.ecs.syr.edu/faculty/fawcett/handouts/Webpages/BlogCodeAnalyzer.htm" target="_blank">Read more</a>
 				</div>
 				<div class="foot-post">
 					<div class="units-row">
 					    <div class="unit-100">
-					    	<strong>Tags:</strong></br>
-					    	<a href="blog2.html">Dependency Analysis</a>
-					    	<!-- <a href="#">tag2</a>,
+					    	<!-- <strong>Tags:</strong>
+					    	<a href="#">tag1</a>,
+					    	<a href="#">tag2</a>,
 					    	<a href="#">tag3</a>, -->
 					    </div>
 					    <div class="unit-100">
@@ -130,7 +136,10 @@ can be implemented using the available resources provided by the
 
 	<footer>
 		<div class="container">
-			<div class="units-row">			    
+			<div class="units-row">
+			    <div class="unit-50">
+			    	<button class="btn btn-orange"><i class="fa fa-arrow-left"></i> <a href="http://Kun4lpal.github.io/Testing"> PREVIOUS</button>
+			    </div>
 			    <div class="unit-50">
 					<ul class="social list-flat right">
 						<li><a href="mailto:kupaliwa@syr.edu"><i class="fa fa-send"></i></a></li>
