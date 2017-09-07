@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Saturn by @flamekaizar</title>
+    <title>Software Engineering BLOGS</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Saturn is free PSD &amp; HTML template by @flamekaizar">
-    <meta name="author" content="Afnizar Nur Ghifari">
+    <meta name="author" content="Kunal Paliwal">
+    <meta name="source" content="Afnizar Nur Ghifari">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/kube.min.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -13,6 +14,8 @@
     <link rel="shortcut icon" href="img/favicon.png" />
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 </head>
 <body>
 	<!-- Navigation -->
@@ -20,17 +23,17 @@
 		<div class="container">
 			<header class="group top-nav">
 				<nav class="navbar logo-w navbar-left" >
-					<a class="logo" href="index.html">Saturn</a>
+					<a class="logo" href="index.html">CSE BLOG</a>
 				</nav>
 				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
-				    <span class="logo">Saturn</span>
+				    <span class="logo">CSE</span>
 				</div>
 			    <nav id="navbar-1" class="navbar item-nav navbar-right">
 				    <ul>
 				        <li class="active"><a href="index.html">Home</a></li>
-				        <li><a href="#">About</a></li>
-				        <li><a href="#">Archive</a></li>
-				        <li><a href="#">Contact</a></li>
+				        <li><a href="https://kupaliwa.mysite.syr.edu/">About</a></li>
+				        <li><a href="https://github.com/Kun4lpal">Github</a></li>
+				        <li><a href="https://www.linkedin.com/in/kupaliwa/">Linkedin</a></li>
 				    </ul>
 				</nav>
 			</header>
@@ -45,37 +48,82 @@
 			    	<img class="img-intro" src="img/avatar.png" alt="">
 			    </div>
 			    <div class="unit-90">
-			    	<p class="p-intro">Hello, I’m Saturn. I’m proud to be a part of milky way.</p>
+			    	<p class="p-intro">Hello, I’m Kunal. I’m proud to be a part of milky way.</p>
 			    </div>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Content -->
 	<div class="content">
 		<div class="container">
 			<!-- Post -->
 			<div class="post">
 				<!-- Heading -->
-				<a href="#"><h1>Galaxy is on your hand</h1></a>
+				<a href="#"><h1>Testing</h1></a>
 				<hr>
 				<div class="in-content">
 					<p>
-						Saturn has a prominent ring system that consists of nine continuous main rings and three discontinuous arcs, composed mostly of ice particles with a smaller amount of rocky debris and dust. Sixty-two known moons orbit the planet, of which fifty-three are officially named. This does not include the hundreds of "moonlets" comprising the rings.
+            <pre>
+The first company founded to provide software products and services was
+Computer Usage Company in 1955. Since then, software has become an
+intrinsic part of business over the last decade. Business in almost all
+sectors depends on it, to aid in the development, marketing and support
+of its productand services. According to industry analyst Gartner, the
+size of the worldwide software industry in 2013 was US$407.3 billion, an
+increase of 4.8% over 2012. As in past years, the largest four software
+vendors were Microsoft, Oracle Corporation, IBM, and SAP respectively.This
+has led to reliability becoming an important factor alongside costs
+while designing software. Most bugs arise from mistakes and errors made
+in either a program's source code or its design, or in components and
+operating system used by such programs.For example, bugs in code that
+controls the Therac-25 radiation therapy machine were directly responsible
+for patient deaths in the 1980s. In 1996, the European Space Agency's
+US$1 billion prototype Ariane 5 rocket had to be destroyed less than a
+minute after launch due to a bug in the on-board guidance computer
+program.This makes testing an important tool to prevent such unexpected
+outcomes as well as increasing reliability of the software. Many critical
+issues will be discussed in this document which will summarize the key
+issues and their solutions in the design of the test harness.This system
+will be implemented in C# using the facilities of .Net framework class
+libraries and Visual Studio 2015. Test harness will be divided into
+separate modules in which each module performs specific tasks.
+
+The project should provide capability to:
+1) Execute test requests after obtaining them from a XML file.
+2) Handle each test request by isolating it with an app domain.
+3) Create a log file with time stamp for each activity that takes place
+in the test harness.
+4) Support all client queries from the log file.
+5) Fetch DLL files from the specified directory and inject it to the
+   app domain.
+6) Assert module which displays the status of the test harness.
+
+Important issues to be solved during implementation of this system are:
+1) Unloading exception – solved by making sure unloading happens b4 loading
+ a new DLL.
+2) Stub doesn’t work – solved by providing exception
+3) App domain plugging
+4) Third party dependencies – solved by accessing meta data
+Thus Test Harness can handle almost all kinds of tests and such a system
+can be implemented using the available resources provided by the
+.Net framework.
+</pre>
+
 					</p>
-					<a class="read-more" href="#">Read more</a>
+					<a class="read-more" href="doc.pdf">Read more</a>
 				</div>
 				<div class="foot-post">
 					<div class="units-row">
 					    <div class="unit-100">
-					    	<strong>Tags:</strong>
-					    	<a href="#">Galaxy</a>,
-					    	<a href="#">Human</a>,
-					    	<a href="#">World</a>,
+					    	<!-- <strong>Tags:</strong>
+					    	<a href="#">tag1</a>,
+					    	<a href="#">tag2</a>,
+					    	<a href="#">tag3</a>, -->
 					    </div>
 					    <div class="unit-100">
-					    	<strong>COMMENTS:</strong> 
-					    	<a href="#">3</a>
+					    	<!-- <strong>COMMENTS:</strong>
+					    	<a href="#">3</a> -->
 					    </div>
 					</div>
 				</div>
@@ -83,59 +131,7 @@
 			<!-- /post -->
 
 			<!-- Post -->
-			<div class="post">
-				<!-- Heading -->
-				<a href="#"><h1>The moon will pass above or below Saturn in the sky</h1></a>
-				<hr>
-				<div class="in-content">
-					<img class="right" src="img/post-img.jpg" alt="">
-					<p>
-						Saturn has a prominent ring system that consists of nine continuous main rings and three discontinuous arcs, composed mostly afn of ice particles with a smaller amount of rocky debris and dust.
-					</p>
-				</div>
-				<div class="foot-post">
-					<div class="units-row">
-					    <div class="unit-100">
-					    	<strong>Tags:</strong>
-					    	<a href="#">Saturn</a>,
-					    	<a href="#">Sky</a>,
-					    	<a href="#">Moon</a>,
-					    </div>
-					    <div class="unit-100">
-					    	<strong>COMMENTS:</strong> 
-					    	<a href="#">3</a>
-					    </div>
-					</div>
-				</div>
-			</div>
-			<!-- /post -->
 
-			<!-- Post -->
-			<div class="post">
-				<!-- Heading -->
-				<a href="#"><h1>Moon’s orbit around the Earth </h1></a>
-				<hr>
-				<div class="in-content">
-					<p>
-						Tilted to the orbit of the Earth around the Sun – and so most of the time, the moon will pass above or below Saturn in the sky, and no occultation will occur. It is only when Saturn lies near the point that the moon’s orbit crosses the “plane of the ecliptic” that occultations can happen.
-					</p>
-					<a class="read-more" href="#">Read more</a>
-				</div>
-				<div class="foot-post">
-					<div class="units-row">
-					    <div class="unit-100">
-					    	<strong>Tags:</strong>
-					    	<a href="#">Moon</a>,
-					    	<a href="#">Orbit</a>,
-					    	<a href="#">Earth</a>,
-					    </div>
-					    <div class="unit-100">
-					    	<strong>COMMENTS:</strong> 
-					    	<a href="#">221</a>
-					    </div>
-					</div>
-				</div>
-			</div>
 			<!-- /post -->
 		</div>
 	</div>
@@ -148,15 +144,15 @@
 			    </div>
 			    <div class="unit-50">
 					<ul class="social list-flat right">
-						<li><a href="mailto:afnizarhilmi@gmail.com"><i class="fa fa-send"></i></a></li>
-						<li><a href="http://twitter.com/flamekaizar"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="http://dribbble.com/flamekaizar"><i class="fa fa-dribbble"></i></a></li>
-						<li><a href="http://behance.com/flamekaizar"><i class="fa fa-behance"></i></a></li>
+						<li><a href="mailto:kupaliwa@syr.edu"><i class="fa fa-send"></i></a></li>
+						<li><a href="https://twitter.com/Gaymerpride101"><i class="fa fa-twitter"></i></a></li>
+						<!-- <li><a href="http://dribbble.com/flamekaizar"><i class="fa fa-dribbble"></i></a></li>
+						<li><a href="http://behance.com/flamekaizar"><i class="fa fa-behance"></i></a></li> -->
 					</ul>
 			    </div>
 			</div>
 			<p class="text-centered foot-cp">
-	    		<a href="#">handcrafted by @flamekaizar</a>
+	    		<a href="#">Life's purpose is to have a purpose!</a>
 	    	</p>
 		</div>
 	</footer>
