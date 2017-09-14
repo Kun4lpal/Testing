@@ -60,58 +60,53 @@
 			<!-- Post -->
 			<div class="post">
 				<!-- Heading -->
-				<a href="#"><h1>Software Testing</h1></a>
+				<a href="#"><h1>Single Layer Feedforward Neural Network</h1></a>
 				<hr>
-				<div class="in-content">
-					<p>
+				<div class="in-content">			
+				<p>
 				<a href="https://kupaliwa.mysite.syr.edu/">Author : Kunal Paliwal</br></br></a>				
-				<a class="read-more" href="img/depanal.jpg" target="_blank">Package Structure</a>            
-            <pre>
-The first company founded to provide software products and services was Computer Usage Company in 1955. Since then, software has become
-an intrinsic part of business over the last decade. Business in almost all sectors depends on it, to aid in the development, marketing
-and support of its productand services. According to industry analyst Gartner, the size of the worldwide software industry in 2013 was
-US$407.3 billion, an increase of 4.8% over 2012. As in past years, the largest four software vendors were Microsoft, Oracle
-Corporation, IBM, and SAP respectively.This has led to reliability becoming an important factor alongside costs while designing
-software. Most bugs arise from mistakes and errors made in either a program's source code or its design, or in components and operating
-system used by such programs.For example, bugs in code that controls the Therac-25 radiation therapy machine were directly responsible
-for patient deaths in the 1980s. In 1996, the European Space Agency's US$1 billion prototype Ariane 5 rocket had to be destroyed less
-than a minute after launch due to a bug in the on-board guidance computer program.This makes testing an important tool to prevent such
-unexpected outcomes as well as increasing reliability of the software. Many critical issues will be discussed in this document which
-will summarize the key issues and their solutions in the design of the test harness.This system will be implemented in C# using the
-facilities of .Net framework class libraries and Visual Studio 2015. Test harness will be divided into separate modules in which each
-module performs specific tasks.
+				<a class="read-more" href="img/network_gliffy.png" target="_blank">Node structure</a>            
+				<pre>
+CODE SUMMARY:
 
-The project should provide capability to:
-1) Execute test requests after obtaining them from a XML file.
-2) Handle each test request by isolating it with an app domain.
-3) Create a log file with time stamp for each activity that takes place
-in the test harness.
-4) Support all client queries from the log file.
-5) Fetch DLL files from the specified directory and inject it to the
-   app domain.
-6) Assert module which displays the status of the test harness.
+I am building a Single Layer Feed Forward Neural Network. The goal is to research whether Winsorizing can improve the accuracy or 
+computational effort of a single-node classification algorithm. File test_data.py uses normal data and test_winsorized_data.py uses 
+Winsorized data. 
 
-Important issues to be solved during implementation of this system are:
-1) Unloading exception – solved by making sure unloading happens b4 loading
- a new DLL.
-2) Stub doesn’t work – solved by providing exception
-3) App domain plugging
-4) Third party dependencies – solved by accessing meta data
-Thus Test Harness can handle almost all kinds of tests and such a system
-can be implemented using the available resources provided by the
-.Net framework.
+Titanic dataset has been used for testing. Source: https://www.kaggle.com/c/titanic/data.I have removed fields with non-integer or 
+non-float values. The input fields are ticket class, Sex, Age, # of siblings or spouses aboard the ship, # of parents or children 
+aboard the ship, passenger fare. The output is passenger probability of surviving. I am using tanh as my Activation function.  
+The pre-defined learning rate is set to 0.001 and regularization strength set to 0.01.
+
+METHOD DESCRIPTION: 
+
+•	calculate_loss: Helper function to evaluate total loss of the dataset.
+•	predict: Helper function for testing new data
+•	build_model: This function learns the parameter for the neural network and returns the model. No. of iterations are set to 20000
+        and no. of nodes in hidden layer are 7.
+•	generate_data: This function extracts data from train.csv without Winsorization.
+•	winsorized_data: This function extracts data and Winsorizes it by a factor of 0.2
+•	get_accuracy: This function finds prediction accuracy when test our model
+
+RESULT ANALYSIS:
+•	If we look at the result in Output.txt we will find we can see the error loss value decrease after every iteration and is finally 
+	set to 0.499. This means our training is successful and for testing our network we use new data. Computation time was noted to be 4 
+	seconds and ACC was found to be 80%!
+•	While testing the winsorized data though, the error loss value is now even smaller: 0.417. While testing our network we note an 
+	increased accuracy in our prediction, ACC = 85%. But an increased computational effort was needed. Computational time was noted to
+	be 24 seconds!
+
 </pre>
-
 					</p>															
-					<a class="read-more" href="assets/doc.PDF" target="_blank">Read more</a>
+					<a class="read-more" href="assets/Code_summary.PDF" target="_blank">Read more</a>
 				</div>
 				<div class="foot-post">
 					<div class="units-row">
 					    <div class="unit-100">
-					    	<strong>Tags:</strong></br>
+					    	<strong>Tags:</strong>					    	
+					    	<a href="index.html">Software Testing</a>,
 					    	<a href="DependencyAnalysis.html">Dependency Analysis</a>,
-					    	<a href="FeedForwardNN.html" target="_blank">Single Layer Neural Network</a>
-					    	<!-- <a href="#">tag3</a>, --> 
+					    	<a href="assets/Output.txt" target="_blank">Output</a>
 					    </div>
 					    <div class="unit-100">
 					    	<!-- <strong>COMMENTS:</strong>
@@ -130,7 +125,9 @@ can be implemented using the available resources provided by the
 
 	<footer>
 		<div class="container">
-			<div class="units-row">			    
+			<div class="units-row">
+			    <div class="unit-50">			    	
+			    </div>
 			    <div class="unit-50">
 					<ul class="social list-flat right">
 						<li><a href="mailto:kupaliwa@syr.edu"><i class="fa fa-send"></i></a></li>
